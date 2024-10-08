@@ -1,0 +1,18 @@
+# Función para calcular el factorial de un número
+def factorial(n):
+    if n == 0 or n == 1:
+        return 1
+    else:
+        return n * factorial(n - 1)
+
+# Pedir al usuario que ingrese un número
+numero = int(input("Ingresa un número para calcular su factorial: "))
+
+# Calcular el factorial
+resultado = factorial(numero)
+
+# Escribir el resultado en un archivo de texto
+with open("factorial_resultado.txt", "w") as archivo:
+    archivo.write(f"El factorial de {numero} es: {resultado}\n")
+
+print(f"El factorial de {numero} ha sido calculado y guardado en 'factorial_resultado.txt'.")
